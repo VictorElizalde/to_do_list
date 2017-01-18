@@ -16,13 +16,12 @@ class SecondViewController: UIViewController {
         
         let itemsObject = UserDefaults.standard.object(forKey: "items")
         
-        var items: NSMutableArray
+        var items: [String]
         
-        if let tempItems = itemsObject as? NSMutableArray {
+        if let tempItems = itemsObject as? [String] {
             
             items = tempItems
-            items.addObjects(from: [itemTF.text!])
-        
+            items.append(itemTF.text!)
         } else {
             
             items = [itemTF.text!]
@@ -34,6 +33,11 @@ class SecondViewController: UIViewController {
         
     }
     
+    @IBAction func awayKeyboard(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

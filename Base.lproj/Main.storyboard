@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PwU-dL-mpe" id="DgC-Gv-68y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -50,6 +50,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="To Do List" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="table" destination="THj-N0-q6n" id="9H6-up-pcP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,6 +91,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kLc-no-Rh4" firstAttribute="top" secondItem="Nhc-3G-qig" secondAttribute="bottom" constant="23" id="84e-cb-EcU"/>
                             <constraint firstItem="Nhc-3G-qig" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="D2n-lP-Hyp"/>
@@ -97,6 +101,9 @@
                             <constraint firstItem="kLc-no-Rh4" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="eQD-Q5-HNM"/>
                             <constraint firstItem="pmL-1E-p5C" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="vS5-SH-APU"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sco-mk-Zxd" appends="YES" id="Ue6-YA-rzH"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add an item" image="second" id="cPa-gy-q4n"/>
                     <connections>
@@ -104,6 +111,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sco-mk-Zxd">
+                    <connections>
+                        <action selector="awayKeyboard:" destination="8rJ-Kc-sve" id="3ZZ-ZL-7uI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
