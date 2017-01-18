@@ -14,7 +14,23 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var itemTF: UITextField!
     @IBAction func addItem(_ sender: UIButton) {
         
+        let itemsObject = UserDefaults.standard.object(forKey: "items")
         
+        var items: NSMutableArray
+        
+        if let tempItems = itemsObject as? NSMutableArray {
+            
+            items = tempItems
+            items.addObjects(from: [itemTF.text!])
+        
+        } else {
+            
+            items = [itemTF.text!]
+            
+        }
+        
+        UserDefaults.standard.set(items, forKey: "items")
+        itemTF.text = ""
         
     }
     
